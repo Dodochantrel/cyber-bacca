@@ -1,0 +1,34 @@
+#content_admin{
+    height: calc( 100vh - 80px );
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_admin{
+    height: 80px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav_admin a{
+    font-size: 1.3rem;
+    background-color: var(--fourth--color);
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: transform .6s;
+}
+
+.nav_admin a:hover{
+    transform: scale(1.1);
+}
+
+.content_section{
+    height: calc(100% - 80px);
+}

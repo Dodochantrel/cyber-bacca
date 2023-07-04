@@ -1,0 +1,29 @@
+<section>
+    <app-header></app-header>
+    <section id="content_admin">
+
+        <section class="nav_admin">
+            <a (click)="showSection('tool')">Outils</a>
+            <a (click)="showSection('network')">Réseau</a>
+            <a (click)="showSection('graph')">Graphique</a>
+            <a (click)="showSection('console')">Console</a>
+        </section>
+
+        <section id="tool" *ngIf="currentSection === 'tool'" class="content_section">
+        </section>
+
+        <section id="network" *ngIf="currentSection === 'network'" class="content_section">
+
+        </section>
+
+        <section id="graph" *ngIf="currentSection === 'graph'" class="content_section">
+
+        </section>
+
+        <section id="console" *ngIf="currentSection === 'console'" class="content_section">
+            <input />
+            <p></p>
+        </section>
+
+    </section>
+</section>
