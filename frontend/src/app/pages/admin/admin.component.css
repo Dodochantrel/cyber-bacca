@@ -42,7 +42,7 @@ svg{
     width: 30px;
 }
 
-form{
+#nmap{
     padding: .3rem .6rem;
     width: 400px;
     position: absolute;
@@ -50,6 +50,10 @@ form{
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#storeData{
+    margin: 2rem;
 }
 
 form div{

@@ -9,6 +9,12 @@
             <a (click)="showSection('console')">Console</a>
         </section>
 
+        <form id="storeData" (submit)="onSubmitData($event)">
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <app-button-form></app-button-form>
+        </form>
+
         <section id="tool" *ngIf="currentSection === 'tool'" class="content_section">
             <div class="first_line">
                 <a (click)="showForm('nmap')">Nmap</a>
@@ -17,7 +23,7 @@
                     <ng-container *ngIf="loadingNmap">En cours</ng-container>
                     <ng-container *ngIf="nmapResult">Resultat</ng-container>
                   </div>
-                <form *ngIf="nmap" id="nmap">
+                <form *ngIf="nmap" id="nmap" (submit)="onSubmitNmap($event)">
         
                     <app-x-icon (click)="close()"></app-x-icon>
                     <h3>Vos options</h3>
