@@ -1,0 +1,10 @@
+svg{
+    cursor: pointer;
+    transition: transform .6s;
+    width: 30px;
+}
+
+svg:hover{
+    transform: rotate(-90deg) scale(1.1);
+    stroke: var(--fourth--color);
+}

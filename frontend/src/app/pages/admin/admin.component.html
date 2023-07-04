@@ -10,6 +10,54 @@
         </section>
 
         <section id="tool" *ngIf="currentSection === 'tool'" class="content_section">
+            <div class="first_line">
+                <a (click)="showForm('nmap')">Nmap</a>
+                <div class="resultat" [ngClass]="{ 'one': waitingNmap, 'two': loadingNmap, 'three': nmapResult}">
+                    <ng-container *ngIf="waitingNmap">Resultat</ng-container>
+                    <ng-container *ngIf="loadingNmap">En cours</ng-container>
+                    <ng-container *ngIf="nmapResult">Resultat</ng-container>
+                  </div>
+                <form *ngIf="nmap" id="nmap">
+        
+                    <app-x-icon (click)="close()"></app-x-icon>
+                    <h3>Vos options</h3>
+                    <input type="text" id="ip" name="ip" placeholder="IP">
+                    <div class="choice">
+                        <div>
+                            <input type="checkbox" id="-sV" name="-sV">
+                            <label for="-sV">-sV</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-sS" name="-sS">
+                            <label for="-sS">-sS</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-sU" name="-sU">
+                            <label for="-sU">-sU</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-T4" name="-T4">
+                            <label for="-T4">-T4</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-A" name="-A">
+                            <label for="-A">-A</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-v" name="-v">
+                            <label for="-v">-v</label>
+                        </div>
+                    </div>
+
+                    <app-button-form></app-button-form>
+
+                </form>
+            </div>
         </section>
 
         <section id="network" *ngIf="currentSection === 'network'" class="content_section">

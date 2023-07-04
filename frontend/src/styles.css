@@ -6,12 +6,12 @@
     --first--error--color: #DC3545;
     --second--error--color: #F8D7DA;
     --third--error--color: #F1AEB5;
-    --first--error--success: #198754;
-    --second--error--success: #D1E7DD;
-    --third--error--success: #A3CFBB;
-    --first--error--success: #FFC107;
-    --second--error--success: #FFF3CD;
-    --third--error--success: #FFE69C;    
+    --first--success--color: #198754;
+    --second--success--color: #D1E7DD;
+    --third--success--color: #A3CFBB;
+    --first--warning--color: #FFC107;
+    --second--warning--color: #FFF3CD;
+    --third--warning--color: #FFE69C;    
 }
 
 body{

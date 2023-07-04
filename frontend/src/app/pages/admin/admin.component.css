@@ -31,4 +31,88 @@
 
 .content_section{
     height: calc(100% - 80px);
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+svg{
+    width: 30px;
+}
+
+form{
+    padding: .3rem .6rem;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+form div{
+    display: flex;
+}
+
+form app-x-icon{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.first_line{
+    width: 90%;
+    background-color: var(--third--color);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0rem .5rem;
+    justify-content: space-between;
+}
+
+.first_line a{
+    padding: .5rem 1rem;
+    background-color: var(--fourth--color);
+    color: white;
+    cursor: pointer;
+    transition: transform .6s;
+}
+
+.first_line a:hover{
+    transform: scale(1.1);
+}
+
+.resultat{
+    padding: .5rem 1rem; 
+    cursor: pointer;
+}
+
+.one{
+    background-color: var(--second--success--color);
+    color: white;
+}
+
+.two{
+    background-color: var(--first--warning--color);
+    color: white;
+}
+
+.three{
+    background-color: var(--first--success--color);
+    color: white;
+}
+
+#nmap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    background-color: white;
+    justify-content: space-evenly;
+}
+
+#nmap #ip{
+    width: 300px;
 }
