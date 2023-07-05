@@ -3,7 +3,7 @@ const ini = require('ini')
 const { readFileSync } = require('fs');
 
 function executeNmap(options){
-    executeCommand("nmap", options)
+    executeCommand("uptime")
 }
 function setupConnexion(){
     const conn = new Client();
@@ -30,7 +30,7 @@ function concatenateOptions(options){
     })
     return stringOptions
 }
-function executeCommand(command, options){
+function executeCommand(command){
     // const conn = setupConnexion();
     // let result = ''
     // var ip = ""
@@ -64,6 +64,7 @@ function executeCommand(command, options){
     try { 
         conn.on('ready', () => {
         console.log('Client :: ready');
+        console.log('commande : ' + command)
         conn.exec(command, (err, stream) => {
             if (err) console.log(err);
             stream.on('close', (code, signal) => {
@@ -81,6 +82,7 @@ function executeCommand(command, options){
         username: 'kali',
         password: 'kali'
     });
+    console.log('result : ' + data)
     return data;
     } catch (error) {
         console.log('error ' + error)
