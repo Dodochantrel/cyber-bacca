@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ButtonFormComponent } from 'src/app/components/button_form/button_form.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { LockComponent } from 'src/app/icons/lock/lock.component';
+import { UserComponent } from 'src/app/icons/user/user.component';
 import { XComponent } from 'src/app/icons/x/x.component';
 import { ToolService } from 'src/app/services/tool.service';
 
@@ -12,7 +14,9 @@ import { ToolService } from 'src/app/services/tool.service';
         HeaderComponent,
         CommonModule,
         XComponent,
-        ButtonFormComponent
+        ButtonFormComponent,
+        UserComponent,
+        LockComponent
     ],
     templateUrl: './admin.component.html',
     styleUrls: ['./admin.component.css'],
@@ -21,9 +25,13 @@ import { ToolService } from 'src/app/services/tool.service';
 export class AdminComponent implements OnInit {
     currentSection: string = 'tool';
     nmap: boolean = false;
+    fping: boolean = false;
     waitingNmap: boolean = true;
     loadingNmap: boolean = false;
     nmapResult: boolean = false;
+    waitingFping: boolean = true;
+    loadingFping: boolean = false;
+    fpingResult: boolean = false;
 
     constructor(private toolService: ToolService) {}
 
@@ -50,6 +58,9 @@ export class AdminComponent implements OnInit {
             case 'nmap':
                 this.nmap = true;
                 break;
+            case 'fping':
+                this.fping = true;
+                break;
         }
     }
 
@@ -57,19 +68,29 @@ export class AdminComponent implements OnInit {
         this.nmap = false;
     }
 
+    closeFping(){
+        this.fping = false;
+    }
+
     onSubmitData(event: Event): void {
         //Supprimer l'effet de recharge de la page
         event.preventDefault();
         const usernameInput = document.querySelector('#username') as HTMLInputElement;
         const passwordInput = document.querySelector('#password') as HTMLInputElement;
+        const verboseRadioFalse = document.querySelector('#false') as HTMLInputElement;
+        const verboseRadioTrue = document.querySelector('#true') as HTMLInputElement;
+
+        const verboseValue = verboseRadioTrue.checked ? verboseRadioTrue.value : verboseRadioFalse.value;
 
         const formData = {
             password: passwordInput.value,
             username: usernameInput.value,
+            verbose: verboseValue,
         };
 
-        this.toolService.storeData(formData.username, formData.password);
+        console.log(formData);
 
+        this.toolService.storeData(formData.username, formData.password, formData.verbose)
     }
       
     onSubmitNmap(event: Event): void {
@@ -104,6 +125,41 @@ export class AdminComponent implements OnInit {
         this.toolService.nmap(formData).then((response) => {
             this.loadingNmap = false;
             this.nmapResult = true;
+        });
+    }
+
+    onSubmitFping(event: Event): void {
+        //Supprimer l'effet de recharge de la page
+        event.preventDefault();
+        const ipInput = document.querySelector('#fping #ip') as HTMLInputElement;
+        const aCheckbox = document.querySelector('#fping #-a') as HTMLInputElement;
+        const uCheckbox = document.querySelector('#fping #-u') as HTMLInputElement;
+        const sCheckbox = document.querySelector('#fping #-s') as HTMLInputElement;
+        const nCheckbox = document.querySelector('#fping #-n') as HTMLInputElement;
+        const ACheckbox = document.querySelector('#fping #-A') as HTMLInputElement;
+        const vCheckbox = document.querySelector('#fping #-v') as HTMLInputElement;
+
+        //récuper dans le localstorage le username et le password
+        const username = localStorage.getItem('username');
+        const password = localStorage.getItem('password');
+      
+        const formData = {
+            ip: ipInput.value,
+            a: aCheckbox.checked,
+            u: uCheckbox.checked,
+            s: sCheckbox.checked,
+            n: nCheckbox.checked,
+            A: ACheckbox.checked,
+            v: vCheckbox.checked,
+            password: username,
+            username: password,
+        };
+        this.waitingFping = false;
+        this.loadingFping = true;
+
+        this.toolService.fping(formData).then((response) => {
+            this.loadingFping = false;
+            this.fpingResult = true;
         });
     }
 }

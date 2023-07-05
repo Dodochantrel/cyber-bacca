@@ -10,13 +10,34 @@
         </section>
 
         <form id="storeData" (submit)="onSubmitData($event)">
-            <input type="text" id="username" name="username" placeholder="Username">
-            <input type="password" id="password" name="password" placeholder="Password">
+            <div class="element_form">
+                <app-user-icon></app-user-icon>
+                <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+            <div class="element_form">
+                <app-lock-icon></app-lock-icon>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+
+            <div class="verbose">
+
+                <div class="radio">
+                    <input type="radio" id="false" name="verbose" value="false" checked>
+                    <label for="false">Sans verbose</label>
+                </div>
+            
+                <div class="radio">
+                    <input type="radio" id="true" name="verbose" value="true">
+                    <label for="true">avec verbose</label>
+                </div>
+
+            </div>
+
             <app-button-form></app-button-form>
         </form>
 
         <section id="tool" *ngIf="currentSection === 'tool'" class="content_section">
-            <div class="first_line">
+            <div class="first line">
                 <a (click)="showForm('nmap')">Nmap</a>
                 <div class="resultat" [ngClass]="{ 'one': waitingNmap, 'two': loadingNmap, 'three': nmapResult}">
                     <ng-container *ngIf="waitingNmap">Resultat</ng-container>
@@ -47,6 +68,55 @@
                         <div>
                             <input type="checkbox" id="-T4" name="-T4">
                             <label for="-T4">-T4</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-A" name="-A">
+                            <label for="-A">-A</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-v" name="-v">
+                            <label for="-v">-v</label>
+                        </div>
+                    </div>
+
+                    <app-button-form></app-button-form>
+
+                </form>
+            </div>
+
+            <div class="second line">
+                <a (click)="showForm('fping')">Fping</a>
+                <div class="resultat" [ngClass]="{ 'one': waitingFping, 'two': loadingFping, 'three': fpingResult}">
+                    <ng-container *ngIf="waitingFping">Resultat</ng-container>
+                    <ng-container *ngIf="loadingFping">En cours</ng-container>
+                    <ng-container *ngIf="fpingResult">Resultat</ng-container>
+                  </div>
+                <form *ngIf="fping" id="fping" (submit)="onSubmitFping($event)">
+        
+                    <app-x-icon (click)="closeFping()"></app-x-icon>
+                    <h3>Vos options</h3>
+                    <input type="text" id="ip" name="ip" placeholder="IP">
+                    <div class="choice">
+                        <div>
+                            <input type="checkbox" id="-a" name="-a">
+                            <label for="-a">-a</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-u" name="-u">
+                            <label for="-u">-u</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-s" name="-s">
+                            <label for="-s">-s</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" id="-n" name="-n">
+                            <label for="-n">-n</label>
                         </div>
                         
                         <div>
