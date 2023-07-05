@@ -1,7 +1,6 @@
 const { Client } = require('ssh2')
 const ini = require('ini')
-const fs = require('fs')
-const path = require('path')
+const { readFileSync } = require('fs');
 
 function executeNmap(options){
     executeCommand("nmap", options)
@@ -33,16 +32,16 @@ function concatenateOptions(options){
 }
 function executeCommand(command, options){
     // const conn = setupConnexion();
-    let result = ''
-    var ip = ""
-    var optionsKept = []
-    for(let key in options) {
-        if( key === "ip" ){
-            ip = options[key]
-        }else if(typeof options[key] == "boolean" && options[key] === true){
-            optionsKept.push(key)
-        }
-    }
+    // let result = ''
+    // var ip = ""
+    // var optionsKept = []
+    // for(let key in options) {
+    //     if( key === "ip" ){
+    //         ip = options[key]
+    //     }else if(typeof options[key] == "boolean" && options[key] === true){
+    //         optionsKept.push(key)
+    //     }
+    // }
 
     // console.log(optionsKept,ip)
     //TODO: voir pour les différentes commandes
@@ -62,10 +61,11 @@ function executeCommand(command, options){
     //     });
     // });
     const conn = new Client();
-    conn.on('ready', () => {
+    try { 
+        conn.on('ready', () => {
         console.log('Client :: ready');
-        conn.exec('uptime', (err, stream) => {
-            if (err) throw err;
+        conn.exec(command, (err, stream) => {
+            if (err) console.log(err);
             stream.on('close', (code, signal) => {
                 console.log('Stream :: close :: code: ' + code + ', signal: ' + signal);
                 conn.end();
@@ -79,9 +79,12 @@ function executeCommand(command, options){
         host: "10.103.3.124",
         port: 22,
         username: 'kali',
-        privateKey: //TODO:lire le fichier id_rsa pitié
+        password: 'kali'
     });
-    return result;
+    return data;
+    } catch (error) {
+        console.log('error ' + error)
+    }
 }
 module.exports = {
     executeNmap
