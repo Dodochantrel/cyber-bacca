@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ButtonFormComponent } from 'src/app/components/button_form/button_form.component';
+import { ChartLineComponent } from 'src/app/components/chart_line/chartLine.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { LockComponent } from 'src/app/icons/lock/lock.component';
 import { UserComponent } from 'src/app/icons/user/user.component';
@@ -16,7 +17,8 @@ import { ToolService } from 'src/app/services/tool.service';
         XComponent,
         ButtonFormComponent,
         UserComponent,
-        LockComponent
+        LockComponent,
+        ChartLineComponent
     ],
     templateUrl: './admin.component.html',
     styleUrls: ['./admin.component.css'],
