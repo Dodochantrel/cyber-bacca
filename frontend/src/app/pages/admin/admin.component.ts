@@ -18,7 +18,7 @@ import { ToolService } from 'src/app/services/tool.service';
         ButtonFormComponent,
         UserComponent,
         LockComponent,
-        ChartLineComponent
+        ChartLineComponent,
     ],
     templateUrl: './admin.component.html',
     styleUrls: ['./admin.component.css'],
