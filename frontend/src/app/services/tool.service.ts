@@ -22,10 +22,10 @@ export class ToolService {
     try {
       return axios.post(url, formData)
         .then(response => {
-          // Traitez la réponse ici si nécessaire
+          console.log(response);
         })
         .catch(error => {
-          // Gérez les erreurs ici si nécessaire
+          console.log(error);
           return error;
         });
     } catch (error) {
@@ -47,5 +47,22 @@ export class ToolService {
     } catch (error) {
       throw error;
     }
+  }
+
+  async console(message: string): Promise<String> {
+    const url = `${this.url}/command`;
+    return 'la commande a été envoyé'
+    // try {
+    //   return axios.post(url, message)
+    //     .then(response => {
+    //       return response.data;
+    //     })
+    //     .catch(error => {
+    //       // Gérez les erreurs ici si nécessaire
+    //       return error;
+    //     });
+    // } catch (error) {
+    //   throw error;
+    // }
   }
 }

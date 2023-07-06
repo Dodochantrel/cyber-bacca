@@ -167,3 +167,158 @@ form app-x-icon{
 .verbose *{
     margin: 0;
 }
+
+#console{
+    background-color: black;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#console_form{
+    width: 100%;
+}
+
+.resultat_du_truc{
+    color: white;
+    margin: .1rem 0;
+    font-size: 1.5rem;
+}
+
+#console_form .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form2{
+    width: 100%;
+}
+
+#console_form2 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form2 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form2 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form2{
+    width: 100%;
+}
+
+#console_form2 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form2 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form2 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form3{
+    width: 100%;
+}
+
+#console_form3 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form3 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form3 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form3 .ligne_commande #resultat_console{
+    height: 30px;
+    color: white;
+}
+
+#console_form4{
+    width: 100%;
+}
+
+#console_form4 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form4 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form4 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}

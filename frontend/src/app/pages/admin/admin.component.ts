@@ -34,6 +34,9 @@ export class AdminComponent implements OnInit {
     waitingFping: boolean = true;
     loadingFping: boolean = false;
     fpingResult: boolean = false;
+    console2: boolean = false;
+    console3: boolean = false;
+    console4: boolean = false;
 
     constructor(private toolService: ToolService) {}
 
@@ -162,6 +165,45 @@ export class AdminComponent implements OnInit {
         this.toolService.fping(formData).then((response) => {
             this.loadingFping = false;
             this.fpingResult = true;
+        });
+    }
+
+    onSubmitRequete(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form #console') as HTMLInputElement;
+        this.toolService.console(ipInput.value).then((response) => {
+          const resultat = document.querySelector('#resultat_console') as HTMLInputElement;
+          resultat.textContent = response.toString();
+          this.console2 = true;
+        });
+    }
+
+    onSubmitRequete2(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form2 #console2') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console2') as HTMLInputElement;
+            resultat.textContent = response.toString();
+            this.console3 = true;
+        });
+    }
+
+    onSubmitRequete3(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form3 #console3') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console3') as HTMLInputElement;
+            resultat.textContent = response.toString();
+            this.console4 = true;
+        });
+    }
+
+    onSubmitRequete4(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form4 #console4') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console4') as HTMLInputElement;
+            resultat.textContent = response.toString();
         });
     }
 }

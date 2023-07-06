@@ -5,7 +5,6 @@
         <section class="nav_admin">
             <a (click)="showSection('tool')">Outils</a>
             <a (click)="showSection('network')">Réseau</a>
-            <a (click)="showSection('graph')">Graphique</a>
             <a (click)="showSection('console')">Console</a>
         </section>
 
@@ -140,13 +139,38 @@
 
         </section>
 
-        <section id="graph" *ngIf="currentSection === 'graph'" class="content_section">
-            <app-graph></app-graph>
-        </section>
-
         <section id="console" *ngIf="currentSection === 'console'" class="content_section">
-            <input />
-            <p></p>
+            <form id="console_form" (submit)="onSubmitRequete($event)">
+                <div class="ligne_commande">
+                    <p>root : </p>
+                    <input type='text' name='console' id="console" />
+                </div>
+                <p id='resultat_console' class="resultat_du_truc"></p>
+            </form>
+
+            <form id="console_form2" (submit)="onSubmitRequete2($event)" *ngIf='console2'>
+                <div class="ligne_commande">
+                    <p>root : </p>
+                    <input type='text' name='console2' id="console2" />
+                </div>
+                <p id='resultat_console2' class="resultat_du_truc"></p>
+            </form>
+
+            <form id="console_form3" (submit)="onSubmitRequete3($event)" *ngIf='console3'>
+                <div class="ligne_commande">
+                    <p>root : </p>
+                    <input type='text' name='console3' id="console3" />
+                </div>
+                <p id='resultat_console3' class="resultat_du_truc"></p>
+            </form>
+
+            <form id="console_form4" (submit)="onSubmitRequete4($event)" *ngIf='console4'>
+                <div class="ligne_commande">
+                    <p>root : </p>
+                    <input type='text' name='console4' id="console4" />
+                </div>
+                <p id='resultat_console4' class="resultat_du_truc"></p>
+            </form>
         </section>
 
     </section>

@@ -4,7 +4,7 @@
     initial-value: 0;
   }
   
-  .pie {
+  .pourcent {
     --p:20;
     --b:22px;
     --c:darkred;
@@ -20,13 +20,13 @@
     font-weight:bold;
     font-family:sans-serif;
   }
-  .pie:before,
-  .pie:after {
+  .pourcent:before,
+  .pourcent:after {
     content:"";
     position:absolute;
     border-radius:50%;
   }
-  .pie:before {
+  .pourcent:before {
     inset:0;
     background:
       radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
@@ -34,7 +34,7 @@
     -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
             mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
   }
-  .pie:after {
+  .pourcent:after {
     inset:calc(50% - var(--b)/2);
     background:var(--c);
     transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
@@ -50,4 +50,21 @@
   }
   @keyframes p {
     from{--p:0}
+  }
+
+  .pie {
+    margin: 5vmin auto;
+    border-radius: 50%;
+    width: 90vmin;
+    height: 90vmin;
+    overflow: hidden;
+    background: linear-gradient(-21deg, #2196f3 50%, transparent 50%), linear-gradient(to right, #2196f3 50%, #ffc107 50%);
+  }
+  
+  .html {
+    margin: 20vmin 0 0 50vmin;
+  }
+  
+  .css {
+    margin: 33vmin;
   }
