@@ -322,3 +322,163 @@ form app-x-icon{
     outline: none;
     height: 30px;
 }
+
+#console_form5{
+    width: 100%;
+}
+
+#console_form5 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form5 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form5 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form5 .ligne_commande #resultat_console{
+    height: 30px;
+    color: white;
+}
+
+#console_form6{
+    width: 100%;
+}
+
+#console_form6 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form6 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form6 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form6 .ligne_commande #resultat_console{
+    height: 30px;
+    color: white;
+}
+
+#console_form7{
+    width: 100%;
+}
+
+#console_form7 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form7 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form7 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form7 .ligne_commande #resultat_console{
+    height: 30px;
+    color: white;
+}
+
+#console_form8{
+    width: 100%;
+}
+
+#console_form8 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form8 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form8 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form8 .ligne_commande #resultat_console{
+    height: 30px;
+    color: white;
+}
+
+#console_form9{
+    width: 100%;
+}
+
+#console_form9 .ligne_commande{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#console_form9 .ligne_commande p{
+    margin: 0;
+    color: var(--first--success--color);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+#console_form9 .ligne_commande input{
+    border: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem;
+    outline: none;
+    height: 30px;
+}
+
+#console_form9 .ligne_commande #resultat_console{
+    height: 30px;
+    color: white;
+}

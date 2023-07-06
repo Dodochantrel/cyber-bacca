@@ -37,6 +37,11 @@ export class AdminComponent implements OnInit {
     console2: boolean = false;
     console3: boolean = false;
     console4: boolean = false;
+    console5: boolean = false;
+    console6: boolean = false;
+    console7: boolean = false;
+    console8: boolean = false;
+    console9: boolean = false;
 
     constructor(private toolService: ToolService) {}
 
@@ -204,6 +209,57 @@ export class AdminComponent implements OnInit {
         this.toolService.console(ipInput.toString()).then((response) => {
             const resultat = document.querySelector('#resultat_console4') as HTMLInputElement;
             resultat.textContent = response.toString();
+            this.console5 = true;
         });
     }
+
+    onSubmitRequete5(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form5 #console5') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console5') as HTMLInputElement;
+            resultat.textContent = response.toString();
+            this.console6 = true;
+        });
+    }
+
+    onSubmitRequete6(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form6 #console6') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console6') as HTMLInputElement;
+            resultat.textContent = response.toString();
+            this.console7 = true;
+        });
+    }
+
+    onSubmitRequete7(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form7 #console7') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console7') as HTMLInputElement;
+            resultat.textContent = response.toString();
+            this.console8 = true;
+        });
+    }
+
+    onSubmitRequete8(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form8 #console8') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console8') as HTMLInputElement;
+            resultat.textContent = response.toString();
+            this.console9 = true;
+        });
+    }
+
+    onSubmitRequete9(event: Event): void {
+        event.preventDefault();
+        const ipInput = document.querySelector('#console_form9 #console9') as HTMLInputElement;
+        this.toolService.console(ipInput.toString()).then((response) => {
+            const resultat = document.querySelector('#resultat_console9') as HTMLInputElement;
+            resultat.textContent = response.toString();
+        });
+    }
+
 }
